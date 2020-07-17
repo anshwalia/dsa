@@ -10,8 +10,8 @@
 
 | Name | Implementation |
 | --- | --- |
-| Stack | [C++]('./C++/stack.cpp') , [Java]('./Java/#') , [JavaScript]('./JavaScript/#') |
-| Queue | [C++]('./C++/stack.cpp') , [Java]('./Java/#') , [JavaScript]('./JavaScript/#') |
+| Stack | [C++](./C++/stack.cpp) , [Java](./Java/#) , [JavaScript](./JavaScript/#) |
+| Queue | [C++](./C++/stack.cpp) , [Java](./Java/#) , [JavaScript](./JavaScript/#) |
 | Linked List | [C++]('./C++/stack.cpp') , [Java]('./Java/#') , [JavaScript]('./JavaScript/#') |
 
 <hr />
