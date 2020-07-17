@@ -10,9 +10,7 @@
 
 | Name | Implementation |
 | --- | --- |
-| Stack | [C++](./C++/stack.cpp) , [Java](./Java/#) , [JavaScript](./JavaScript/#) |
-| Queue | [C++](./C++/stack.cpp) , [Java](./Java/#) , [JavaScript](./JavaScript/#) |
-| Linked List | [C++]('./C++/stack.cpp') , [Java]('./Java/#') , [JavaScript]('./JavaScript/#') |
+| Stack | [C++](./C++/'Data Structures'/Stack.cpp) |
 
 <hr />
 
@@ -22,16 +20,12 @@
 
 | Name | Implementation |
 | --- | --- |
-| Bubble Sort | [C++]('./C++/#') , [Java]('./Java/#') , [JavaScript]('./JavaScript/#') |
-| Insertion Sort | [C++]('./C++/#') , [Java]('./Java/#') , [JavaScript]('./JavaScript/#') |
-| Quick Sort | [C++]('./C++/#') , [Java]('./Java/#') , [JavaScript]('./JavaScript/#') |
-| Merge Sort | [C++]('./C++/#') , [Java]('./Java/#') , [JavaScript]('./JavaScript/#') |
+| Bubble Sort | [C++](./C++/Algorithms/Sorting/Bubble_Sort.cpp) |
 
 <h3>Searching</h3>
 
 | Name | Implementation |
 | --- | --- |
-| Linear Search | [C++]('./C++/#') , [Java]('./Java/#') , [JavaScript]('./JavaScript/#') |
-| Binary Search | [C++]('./C++/#') , [Java]('./Java/#') , [JavaScript]('./JavaScript/#') |
+| Linear Search | [C++](./C++/Algorithms/Searching/Linear_Search.cpp) |
 
 <hr />
