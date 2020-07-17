@@ -10,7 +10,7 @@
 
 | Name | Implementation |
 | --- | --- |
-| Stack | [C++](./C++/'Data Structures'/Stack.cpp) |
+| Stack | [C++](./C++/Data%20Structures/Stack.cpp) |
 
 <hr />
 
