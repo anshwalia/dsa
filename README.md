@@ -23,7 +23,7 @@
 
 | Name | Implementation |
 | --- | --- |
-| Linear Search | [C++](./C++/Algorithms/Searching/Linear_Search.cpp) |
+| Linear Search | [C++](./C++/Algorithms/Searching/Linear_Search.cpp) , [JavaScript](./JavaScript/Algorithms/Searching/Linear_Search.js) |
 | Binary Search | [C++](./C++/Algorithms/Searching/Binary_Search.cpp) |
 
 <hr />
