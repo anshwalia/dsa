@@ -17,13 +17,13 @@
 
 | Name | Implementation |
 | --- | --- |
-| Bubble Sort | [C++](./C++/Algorithms/Sorting/Bubble_Sort.cpp) |
+| Bubble Sort | [C++](./C++/Algorithms/Sorting/Bubble_Sort.cpp) , [Java](./Java/Algorithms/Sorting/Bubble_Sort.java) |
 
 <h3>Searching</h3>
 
 | Name | Implementation |
 | --- | --- |
-| Linear Search | [C++](./C++/Algorithms/Searching/Linear_Search.cpp) , [JavaScript](./JavaScript/Algorithms/Searching/Linear_Search.js) |
-| Binary Search | [C++](./C++/Algorithms/Searching/Binary_Search.cpp) |
+| Linear Search | [C++](./C++/Algorithms/Searching/Linear_Search.cpp) , [Java](./Java/Algorithms/Searching/Linear_Search.java), [JavaScript](./JavaScript/Algorithms/Searching/Linear_Search.js) |
+| Binary Search | [C++](./C++/Algorithms/Searching/Binary_Search.cpp) , [Java](./Java/Algorithms/Searching/Binary_Search.java) |
 
 <hr />
