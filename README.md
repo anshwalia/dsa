@@ -1,11 +1,8 @@
 <h1 align="center">Data Structures and Algorithms</h1>
-<h3 align="center">"Implementation Using Various Programming Languages"</h3>
-
-<p align="center">
-   <img src="./assets/logos/cpp_logo.png" width="100px">  <img src="./assets/logos/java_logo.png" width="100px">  <img src="./assets/logos/js_logo.png" width="100px"> 
-</p>
+<h3 align="center">( Implementation Using Various Programming Languages )</h3>
 
 <hr />
+
 <h2>DATA STRUCTURES</h2>
 
 | Name | Implementation |
@@ -27,5 +24,6 @@
 | Name | Implementation |
 | --- | --- |
 | Linear Search | [C++](./C++/Algorithms/Searching/Linear_Search.cpp) |
+| Binary Search | [C++](./C++/Algorithms/Searching/Binary_Search.cpp) |
 
 <hr />
