@@ -17,7 +17,7 @@
 
 | Name | Implementation |
 | --- | --- |
-| Bubble Sort | [C++](./C++/Algorithms/Sorting/Bubble_Sort.cpp) , [Java](./Java/Algorithms/Sorting/Bubble_Sort.java) |
+| Bubble Sort | [C++](./C++/Algorithms/Sorting/Bubble_Sort.cpp) , [Java](./Java/Algorithms/Sorting/Bubble_Sort.java) , [JavaScript](./JavaScript/Algorithms/Sorting/Bubble_Sort.js) |
 
 <h3>Searching</h3>
 
