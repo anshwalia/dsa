@@ -24,6 +24,6 @@
 | Name | Implementation |
 | --- | --- |
 | Linear Search | [C++](./C++/Algorithms/Searching/Linear_Search.cpp) , [Java](./Java/Algorithms/Searching/Linear_Search.java), [JavaScript](./JavaScript/Algorithms/Searching/Linear_Search.js) |
-| Binary Search | [C++](./C++/Algorithms/Searching/Binary_Search.cpp) , [Java](./Java/Algorithms/Searching/Binary_Search.java) |
+| Binary Search | [C++](./C++/Algorithms/Searching/Binary_Search.cpp) , [Java](./Java/Algorithms/Searching/Binary_Search.java) , [JavaScript](./JavaScript/Algorithms/Searching/Binary_Search.js) |
 
 <hr />
