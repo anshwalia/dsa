@@ -5,9 +5,28 @@
 
 <h2>DATA STRUCTURES</h2>
 
-| Name | Implementation |
-| --- | --- |
-| Stack | [C++](./C++/Data%20Structures/Stack.cpp) |
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Language</th>
+  </tr>
+  <tr>
+    <th>Stack</th>
+    <td><a href="./C++/Data%20Structures/Stack.cpp">C++</a></td>
+  </tr>
+  <tr>
+    <th>Linked List</th>
+    <td>
+      <ul>
+        <li><i>Single Linked List</i>
+          <ul>
+            <li><a href="./C++/Data%20Structures/Linked%20List/Single_Linked_List.cpp">C++</a></li>
+          </ul>
+        </li>
+      </ul>
+    </td>
+  </tr>
+</table>
 
 <hr />
 
@@ -15,15 +34,15 @@
 
 <h3>Sorting</h3>
 
-| Name | Implementation |
+| Name | Language |
 | --- | --- |
-| Bubble Sort | [C++](./C++/Algorithms/Sorting/Bubble_Sort.cpp) , [Java](./Java/Algorithms/Sorting/Bubble_Sort.java) , [JavaScript](./JavaScript/Algorithms/Sorting/Bubble_Sort.js) |
+| <b>Bubble Sort</b> | [C++](./C++/Algorithms/Sorting/Bubble_Sort.cpp) , [Java](./Java/Algorithms/Sorting/Bubble_Sort.java) , [JavaScript](./JavaScript/Algorithms/Sorting/Bubble_Sort.js) |
 
 <h3>Searching</h3>
 
-| Name | Implementation |
+| Name | Language |
 | --- | --- |
-| Linear Search | [C++](./C++/Algorithms/Searching/Linear_Search.cpp) , [Java](./Java/Algorithms/Searching/Linear_Search.java), [JavaScript](./JavaScript/Algorithms/Searching/Linear_Search.js) |
-| Binary Search | [C++](./C++/Algorithms/Searching/Binary_Search.cpp) , [Java](./Java/Algorithms/Searching/Binary_Search.java) , [JavaScript](./JavaScript/Algorithms/Searching/Binary_Search.js) |
+| <b>Linear Search</b> | [C++](./C++/Algorithms/Searching/Linear_Search.cpp) , [Java](./Java/Algorithms/Searching/Linear_Search.java), [JavaScript](./JavaScript/Algorithms/Searching/Linear_Search.js) |
+| <b>Binary Search</b> | [C++](./C++/Algorithms/Searching/Binary_Search.cpp) , [Java](./Java/Algorithms/Searching/Binary_Search.java) , [JavaScript](./JavaScript/Algorithms/Searching/Binary_Search.js) |
 
 <hr />
