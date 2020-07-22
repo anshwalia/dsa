@@ -12,15 +12,28 @@
   </tr>
   <tr>
     <th>Stack</th>
-    <td><a href="./C++/Data%20Structures/Stack.cpp">C++</a></td>
+    <td>
+    <a href="./C++/Data%20Structures/Stack.cpp">C++</a>
+    </td>
   </tr>
   <tr>
     <th>Linked List</th>
     <td>
       <ul>
-        <li><i>Single Linked List</i>
+        <li>
+          <i>Single Linked List</i>
           <ul>
-            <li><a href="./C++/Data%20Structures/Linked%20List/Single_Linked_List.cpp">C++</a></li>
+            <li>
+            <a href="./C++/Data%20Structures/Linked%20List/Single_Linked_List.cpp">C++</a>
+            </li>
+          </ul>
+        </li>
+        <li>
+          <i>Double Linked List</i>
+          <ul>
+            <li>
+            <a href="./C++/Data%20Structures/Linked%20List/Double_Linked_List.cpp">C++</a>
+            </li>
           </ul>
         </li>
       </ul>
