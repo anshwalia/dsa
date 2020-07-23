@@ -48,7 +48,7 @@ class Double_Linked_List
 			cout << "\nLinked List Node Count : " << this->nodeCount << endl;
 		}
 
-		// Method to display complete linked list
+		// Method to display complete linked list forwards
 		void displayForward(){
 			if(this->isEmpty()){
 				cout << "\n[ Linked List Empty ]" << endl;
@@ -60,7 +60,7 @@ class Double_Linked_List
 
 				while(true){
 					
-					cout << "<->[" << this->cursor->data << "]";
+					cout << "->[" << this->cursor->data << "]";
 					
 					if(this->cursor->next == NULL){
 						break;
@@ -70,7 +70,29 @@ class Double_Linked_List
 					}
 				}
 
-				cout << "<->(Tail)" << endl;
+				cout << "->(Tail)" << endl;
+			}
+		}
+
+		// Method to display complete linked list backwards
+		void displayBackward(){
+			if(this->isEmpty()){
+				cout << "\n[ LINKED LIST EMPTY ]" << endl;
+			}
+			else{
+				this->cursor = this->tail;
+
+				cout << "\nLinked List : (Tail)";
+				while(true){
+					cout << "<-[" << this->cursor->data << "]";
+					if(this->cursor->prev == this->head){
+						cout << "<-(Head)" << endl;
+						break;
+					}
+					else{
+						this->cursor = this->cursor->prev;
+					}
+				}
 			}
 		}
 
@@ -105,27 +127,123 @@ class Double_Linked_List
 			// Assigning Data to new node
 			newNode->data = data;
 
-			// Setting Cursor to 1st Node
-			this->cursor = this->head->next;
+			if(this->isEmpty()){
+				// Linking Head with New Node
+				this->head->next = newNode;
+				newNode->prev = this->head;
 
-			// Linking Head to New Node
-			this->head->next = newNode;
+				// Making Tail as New Node
+				this->tail = newNode;
+			}
+			else{
+				// Cursor = 1st Node in Linked List
+				this->cursor = this->head->next;
 
-			// Linking New Node Back to head
-			newNode->prev = this->head;
+				// Linking Head with New Node
+				this->head->next = newNode;
+				newNode->prev = this->head;
 
-
-			if(!isEmpty()){
-				// Linking New Node to next node
+				// Linking Current Cursor Node with New Node
 				newNode->next = this->cursor;
-
-				// Linking 1st Node to new node backwards
 				this->cursor->prev = newNode;
 			}
 
+
 			// Incrementing Node Count
 			this->nodeCount += 1;
+
 			cout << "\nOperation : Insertion [ Success ]" << endl;
+		}
+
+		// Method to insert new node after a node with specific data value
+		void inserAfter(int data,int value){
+			if(this->isEmpty()){
+				cout << "\n[ LINKED LIST EMPTY ]" << endl;
+			}
+			else{
+				// Cursor = 1st Node in Linked List
+				this->cursor = this->head->next;
+
+				// Search Loop
+				while(true){
+					if(this->cursor->data == value){
+						// NEW NODE CREATION
+						Node * newNode = (Node*)malloc(sizeof(Node));
+						newNode->data = data;
+
+						newNode->prev = this->cursor;
+
+						if(this->cursor->next != NULL){
+							newNode->next = this->cursor->next;
+
+							Node * temp = this->cursor->next;
+
+							this->cursor->next = newNode;
+
+							temp->prev = newNode;	
+						}
+						else{
+							this->cursor->next = newNode;
+
+							this->tail = newNode;
+						}
+
+						this->nodeCount += 1;
+
+						cout << "\nOperation : Insert After [ Success ]" << endl;
+
+						break;
+					}
+					else{
+						if(this->cursor->next == NULL){
+							cout << "\nOperation : Insert After [ Failed ]" << endl;
+							cout << "Not Matching Value Found!" << endl;
+							break;
+						}
+						else{
+							this->cursor = this->cursor->next;
+						}
+					}
+				}
+			}
+		}
+
+
+		// Method to delete a node with specific value
+		void deleteNode(int value){
+			if(this->isEmpty()){
+				cout << "\n[ LINKED LIST EMPTY ]" << endl;
+			}
+			else{
+				this->cursor = this->head;
+
+				while(true){
+					if(this->cursor->next->data == value){
+						if(this->cursor->next->next == NULL){
+							free(this->cursor->next);
+							this->cursor->next = NULL;
+							this->tail = this->cursor;
+						}
+						else{
+							Node * temp = this->cursor->next->next;
+
+							free(this->cursor->next);
+
+							// Linking Current node while skippin
+							this->cursor->next = temp;
+							temp->prev = this->cursor;
+						}
+					}
+					else{
+						if(this->cursor->next == NULL){
+							cout << "\nOperation : Delete [ Failed ]" << endl;
+						}
+						else{
+							this->cursor = this->cursor->next;
+						}
+					}
+				}
+			}
 		}
 
 };
@@ -188,12 +306,20 @@ int main(){
 				dll->insert(data);
 			break;
 
+			case 3:
+				cout << "\nEnter Value to Insert After : ";
+				cin >> find;
+				cout << "\nEnter Data : ";
+				cin >> data;
+				dll->inserAfter(data,find);
+			break;
+
 			case 6:
 				dll->displayForward();
 			break;
 
 			case 7:
-				// dll->displayBackward();
+				dll->displayBackward();
 			break;
 
 			case 8:
