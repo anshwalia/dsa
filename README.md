@@ -24,7 +24,8 @@
           <i>Single Linked List</i>
           <ul>
             <li>
-            <a href="./C++/Data%20Structures/Linked%20List/Single_Linked_List.cpp">C++</a>
+            <a href="./C++/Data%20Structures/Linked%20List/Single_Linked_List.cpp">C++</a> , 
+              <a href="./Java/Data%20Structures/Linked%20List/Single_Linked_List.java">Java</a>
             </li>
           </ul>
         </li>
