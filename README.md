@@ -13,7 +13,8 @@
   <tr>
     <th>Stack</th>
     <td>
-    <a href="./C++/Data%20Structures/Stack.cpp">C++</a>
+    <a href="./C++/Data%20Structures/Stack.cpp">C++</a> , 
+      <a href="./Java/Data%20Structures/StackIMP.java">Java</a>
     </td>
   </tr>
   <tr>
