@@ -1,5 +1,5 @@
 <h1 align="center">Data Structures and Algorithms</h1>
-<h3 align="center">( Implementation Using Various Programming Languages )</h3>
+<p align="center">Collection of Data Structures and Algorithms Implemented Using Various Programming Languages</p>
 
 <hr />
 
@@ -33,7 +33,8 @@
           <i>Double Linked List</i>
           <ul>
             <li>
-            <a href="./C++/Data%20Structures/Linked%20List/Double_Linked_List.cpp">C++</a>
+            <a href="./C++/Data%20Structures/Linked%20List/Double_Linked_List.cpp">C++</a> , 
+              <a href=".Java/Data%20Structures/Linked%20List/Double_Linked_List.java">Java</a>
             </li>
           </ul>
         </li>
