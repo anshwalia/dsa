@@ -34,7 +34,7 @@
           <ul>
             <li>
             <a href="./C++/Data%20Structures/Linked%20List/Double_Linked_List.cpp">C++</a> , 
-              <a href=".Java/Data%20Structures/Linked%20List/Double_Linked_List.java">Java</a>
+              <a href="./Java/Data%20Structures/Linked%20List/Double_Linked_List.java">Java</a>
             </li>
           </ul>
         </li>
