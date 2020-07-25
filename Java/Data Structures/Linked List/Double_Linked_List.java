@@ -56,6 +56,43 @@ public class Double_Linked_List {
                     dll.prepend(data);
                 break;
 
+                case 3:
+                    System.out.print("\nEnter Node Value : ");
+                    value = scan.nextInt();
+                    System.out.print("\nEnter Data : ");
+                    data = scan.nextInt();
+                    dll.insertAfter(data, value);
+                break;
+
+                case 4:
+                    dll.deleteStart();
+                break;
+
+                case 5:
+                    System.out.print("\nEnter Node Value : ");
+                    value = scan.nextInt();
+                    dll.deleteNode(value);
+                break;
+
+                case 6:
+                    dll.deleteEnd();
+                break;
+
+                case 7:
+                    System.out.print("\nEnter Node Value : ");
+                    value = scan.nextInt();
+                    dll.searchNode(value);
+                break;
+
+                case 8:
+                    if(dll.isEmpty()){
+                        System.out.println("\n[ LINKED LIST EMPTY ]\n");
+                    }
+                    else{
+                        System.out.println("\n[ LINKED LIST NOT EMPTY ]\n");
+                    }
+                break;
+
                 case 9:
                     dll.displayNodeCount();
                 break;
@@ -216,6 +253,171 @@ class DoubleLinkedList{
         this.nodeCount += 1;
 
         System.out.println("\nOperation : Prepend Node [ Success ]\n");
+    }
+
+    // Method to Insert Node after a Node with specific value in Linked List
+    public void insertAfter(int data,int value){
+        if(this.isEmpty()){
+            System.out.println("\n[ LINKED LIST EMPTY ]\n");
+        }
+        else{
+            // Placing Cursor at Head Node of Linked List
+            this.cursor = this.head;
+
+            // Creating New Node
+            Node newNode = new Node(data);
+
+            if(this.tail.data == value){
+                this.tail.next = newNode;
+                newNode.prev = this.tail;
+                this.tail = newNode;
+
+                System.out.println("\nOperation : Insert After [ Success ]\n");
+            }
+            else{
+                while(true){
+                    if(this.cursor.data == value){
+                        newNode.next = this.cursor.next;
+                        newNode.prev = this.cursor;
+                        this.cursor.next = newNode;
+
+                        System.out.println("\nOperation : Insert After [ Success ]\n");
+                        break;
+                    }
+                    else{
+                        if(this.cursor == this.tail){
+                            System.out.println("\nOperation : Insert After [ Failed ]");
+                            System.out.println("No Match Found!\n");
+                            break;
+                        }
+                        else{
+                            this.cursor = this.cursor.next;
+                        }
+                    }
+                }
+            }
+
+            this.nodeCount += 1;
+        }
+    }
+
+    // Method to Delete Node at the Start of Linked List
+    public void deleteStart(){
+        if(this.isEmpty()){
+            System.out.println("\n[ LINKED LIST EMPTY ]\n");
+        }
+        else{
+            if(this.head == this.tail){
+                this.head = null;
+                this.tail = null;
+            }
+            else{
+                this.head = this.head.next;
+                this.head.prev = null;
+            }
+        }
+        this.nodeCount -= 1;
+    }
+
+    // Method to Delete Node with a Specific Value in Linked List
+    public void deleteNode(int value){
+        if(this.isEmpty()){
+            System.out.println("\n[ LINKED LIST EMPTY ]\n");
+        }
+        else{
+            this.cursor = this.head;
+
+            if(this.head.data == value){
+                this.head = this.head.next;
+                this.head.prev = null;
+            }
+            else if(this.tail.data == value){
+                this.tail = this.tail.prev;
+                this.tail.next = null;
+            }
+            else{
+                while(true){
+                    if(this.cursor.data == value){
+                        Node temp = this.cursor.next;
+                        this.cursor = this.cursor.prev;
+                        this.cursor.next = temp;
+                        temp.prev = this.cursor;
+
+                        System.out.println("\nOperation : Delete Node [ Success ]\n");
+                        this.nodeCount -= 1;
+                        break;
+                    }
+                    else{
+                        if(this.cursor == this.tail){
+                            System.out.println("\nOperation : Delete Node [ Failed ]");
+                            System.out.println("No Match Found!\n");
+                            break;
+                        }
+                        else{
+                            this.cursor = this.cursor.next;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // Method to Delete Node at the End of Linked List
+    public void deleteEnd(){
+        if(this.isEmpty()){
+            System.out.println("\n[ LINKED LIST EMPTY ]\n");
+        }
+        else{
+            if(this.head == this.tail){
+                this.head = null;
+                this.tail = null;
+            }
+            else{
+                this.tail = this.tail.prev;
+                this.tail.next = null;
+            }
+        }
+        this.nodeCount -= 1;
+    }
+
+    // Method to Search Node with Matching Value in Linked List
+    public void searchNode(int value){
+        if(this.isEmpty()){
+            System.out.println("\n[ LINKED LIST EMPTY ]\n");
+        }
+        else{
+            this.cursor = this.head;
+            int count = 0;
+
+            if(this.head.data == value){
+                System.out.println("\nOperation : Search Node [ Success ]");
+                System.out.println("Node with Matching Value found at Head\n");
+            }
+            else if(this.tail.data == value){
+                System.out.println("\nOperation : Search Node [ Success ]");
+                System.out.println("Node with Matching Value found at Tail\n");
+            }
+            else{
+                while(true){
+                    if(this.cursor.data == value){
+                        System.out.println("\nOperation : Search Node [ Success ]");
+                        System.out.println("Node with Matching Value found at Node No." + count + "\n");
+                        break;
+                    }
+                    else{
+                        if(this.cursor == this.tail){
+                            System.out.println("\nOperation : Search Node [ Failed ]");
+                            System.out.println("No Match Found!\n");
+                            break;
+                        }
+                        else{
+                            this.cursor = this.cursor.next;
+                            count += 1;
+                        }
+                    }
+                }
+            }
+        }
     }
 
 }
