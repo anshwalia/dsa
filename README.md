@@ -18,6 +18,12 @@
     </td>
   </tr>
   <tr>
+    <th>Queue</th>
+    <td>
+      <a href="./Java/Data%20Structures/QueueIMP.java">Java</a>
+    </td>
+  </tr>
+  <tr>
     <th>Linked List</th>
     <td>
       <ul>
