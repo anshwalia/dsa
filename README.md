@@ -20,6 +20,7 @@
   <tr>
     <th>Queue</th>
     <td>
+      <a href="./C%2B%2B/Data%20Structures/Queue.cpp">C++</a> , 
       <a href="./Java/Data%20Structures/QueueIMP.java">Java</a>
     </td>
   </tr>
