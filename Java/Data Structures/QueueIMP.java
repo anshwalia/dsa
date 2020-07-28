@@ -119,7 +119,7 @@ class Queue{
         this.queueSize = size;
         this.front = -1;
         this.rear = -1;
-        int data = 0;
+        this.data = 0;
     }
 
     // Methods
