@@ -52,16 +52,14 @@ public class QueueIMP {
                 break;
 
                 case 2:
-                    data = q.dequque();
-                    if((data > (q.getCmpMin()-1)) && (data < (q.getCmpMax()+1))){
-                        System.out.println("\nElement Dequeued : " + data + "\n");
+                    if(q.dequque()){
+                        System.out.println("\nElement Dequeued : " +   q.getData() + "\n");
                     }
                 break;
 
                 case 3:
-                    data = q.peek();
-                    if((data > (q.getCmpMin()-1)) && (data < (q.getCmpMax()+1))){
-                        System.out.println("\nElement Dequeued : " + data + "\n");
+                    if(q.peek()){
+                        System.out.println("\nElement Dequeued : " + q.getData() + "\n");
                     }
                 break;
 
@@ -113,10 +111,7 @@ class Queue{
     int queueSize;
     int front;
     int rear;
-
-    // Variables to help in dequque elements
-    int cmpMin;
-    int cmpMax;
+    int data;
 
     // Class Constructor
     public Queue(int size){
@@ -124,8 +119,7 @@ class Queue{
         this.queueSize = size;
         this.front = -1;
         this.rear = -1;
-        this.cmpMin = 0;
-        this.cmpMax = 0;
+        int data = 0;
     }
 
     // Methods
@@ -140,14 +134,9 @@ class Queue{
         return (this.rear >= (this.queueSize-1)) ? true : false;
     }
 
-    // Method to get upperbound of range i.e cmpMax
-    public int getCmpMax(){
-        return this.cmpMax;
-    }
-
-    // Method to get lowerbound of range i.e cmpMin
-    public int getCmpMin(){
-        return this.cmpMin;
+    // Method to get data from queue after dequeue/peek operation
+    public int getData(){
+        return this.data;
     }
 
     // Method to display complete queue
@@ -174,13 +163,6 @@ class Queue{
             System.out.println("\n[ QUEUE IS FULL ]\n");
         }
         else{
-            if(data < this.cmpMin){
-                this.cmpMin = data;
-            }
-            if(data > this.cmpMax){
-                this.cmpMax = data;
-            }
-            
             this.queue[++rear] = data;
 
             if(this.rear == 0){
@@ -192,24 +174,26 @@ class Queue{
     }
 
     // Method to remove elements in queue
-    public int dequque(){
+    public boolean dequque(){
         if(this.isEmpty()){
             System.out.println("\n[ QUEUE IS EMPTY ]\n");
-            return (this.cmpMax+1);
+            return false;
         }
         else{
-            return this.queue[this.front++];
+            this.data = this.queue[this.front++];
+            return true;
         }
     }
 
     // Method to peek front value in queue
-    public int peek(){
+    public boolean peek(){
         if(this.isEmpty()){
             System.out.println("\n[ QUEUE IS EMPTY ]\n");
-            return (this.cmpMax+1);
+            return false;
         }
         else{
-            return this.queue[this.front];
+            this.data = this.queue[this.front];
+            return true;
         }
     }
 
@@ -217,8 +201,7 @@ class Queue{
     public void resetQueue(){
         this.front = -1;
         this.rear = -1;
-        this.cmpMin = 0;
-        this.cmpMax = 0;
+        this.data = 0;
         System.out.println("\nOperation : Reset Queue [ Success ]\n");
     }
 }
