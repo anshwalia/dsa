@@ -22,6 +22,7 @@ public class Circular_Linked_List {
             System.out.println("* 1. Insert            *");
             System.out.println("* 2. Delete            *");
             System.out.println("* 3. Display           *");
+            System.out.println("* 4. Check Empty       *");
             System.out.println("************************");
             System.out.println("* 0. Exit              *");
             System.out.println("************************");
@@ -45,6 +46,15 @@ public class Circular_Linked_List {
 
                 case 3:
                     cll.display();
+                break;
+
+                case 4:
+                    if(cll.isEmpty()){
+                        System.out.println("\n[ LINKED LIST IS EMPTY ]\n");
+                    }
+                    else{
+                        System.out.println("\n[ LINKED LIST IS NOT EMPTY ]\n");
+                    }
                 break;
 
                 case 0:
@@ -132,10 +142,19 @@ class CircularLinkedList{
             newNode.next = newNode;
         }
         else{
-            Node temp = this.head;
-            this.head = newNode;
-            this.head.next = temp;
-            this.tail.next = newNode;
+            this.cursor = this.head;
+
+            while(true){
+                if(this.cursor.next == this.head){
+                    this.cursor.next = newNode;
+                    this.cursor.next.next = this.head;
+                    this.tail = newNode;
+                    break;
+                }
+                else{
+                    this.cursor = this.cursor.next;
+                }
+            }
         }
 
         System.out.println("\nOperation : Insert Node [ Success ]\n");
@@ -147,39 +166,38 @@ class CircularLinkedList{
             System.out.println("\n[ LINKED LIST EMPTY ]\n");
         }
         else{
-            this.cursor = this.head;
+            if(this.head.data == value){
+                this.tail.next = this.head.next;
+                this.head.next = null;
+                this.head = this.tail.next;
+                System.out.println("\nOperation : Delete Node [ Success ]\n");
+            }
+            else{
+                this.cursor = this.head;
 
-            while(true){
-                if((this.head.data == value) && (this.head.next == this.head)){
-                    this.head = null;
-                    this.tail = null;
-                    System.out.println("\nOperation : Delete Node [ Success ]\n");
-                    break;
-                }
-                else if(this.head.data == value){
-                    this.tail.next = this.head.next;
-                    this.head.next = null;
-                    this.head = this.tail.next;
-                    System.out.println("\nOperation : Delete Node [ Success ]\n");
-                    break;
-                }
-                else if(this.cursor.next.data == value){
-                    Node temp1 = this.cursor.next;
-                    Node temp2 = this.cursor.next.next;
-                    
-                    this.cursor.next = temp2;
-                    temp1.next = null;
-
-                    System.out.println("\nOperation : Delete Node [ Success ]\n");
-                    break;
-                }
-                else{
-                    if(this.cursor.next == this.head){
-                        System.out.println("\nOperation : Delete Node [ Failed ]\n");
+                while(true){
+                    if((this.cursor.next == this.tail) && (this.cursor.next.data == value)){
+                        this.cursor.next.next = null;
+                        this.cursor.next = this.head;
+                        this.tail = this.cursor;
+                        System.out.println("\nOperation : Delete Node [ Success ]\n");
+                        break;
+                    }
+                    else if(this.cursor.next.data == value){
+                        Node temp = this.cursor.next.next;
+                        this.cursor.next.next = null;
+                        this.cursor.next = temp;
+                        System.out.println("\nOperation : Delete Node [ Success ]\n");
                         break;
                     }
                     else{
-                        this.cursor = this.cursor.next;
+                        if(this.cursor.next == this.head){
+                            System.out.println("\nOperation : Delete Node [ Failed ]\n");
+                            break;
+                        }
+                        else{
+                            this.cursor = this.cursor.next;
+                        }
                     }
                 }
             }
