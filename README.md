@@ -56,6 +56,12 @@
       </ul>
     </td>
   </tr>
+  <tr>
+    <th>Binary Search Tree</th>
+    <td> 
+      <a href="./Java/Data%20Structures/BinarySearchTree.java">Java</a>
+    </td>
+  </tr>
 </table>
 
 <hr />
