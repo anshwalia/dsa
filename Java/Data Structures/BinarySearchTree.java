@@ -1,13 +1,19 @@
+// Title : Binary Search Tree Implementation Using Java
+// Author : Ansh Walia <anshwalia@outlook.com>
+// Date Created : 16/09/2020
+
 import java.util.Scanner;
 
 public class BinarySearchTree {
     public static void main(String[] args){
         Scanner scan = new Scanner(System.in);
 
+        // Variables
         boolean looping = true;
         int option;
         int data;
 
+        // Binary Search Tree Object
         BST bst = new BST();
 
         while(looping){
@@ -21,6 +27,7 @@ public class BinarySearchTree {
             System.out.println("* 3. Pre-Order Traversal  *");
             System.out.println("* 4. In-Order Traversal   *");
             System.out.println("* 5. Post-Order Traversal *");
+            System.out.println("* 6. Node Count           *");
             System.out.println("***************************");
             System.out.println("* 0. Exit                 *");
             System.out.println("***************************");
@@ -48,6 +55,9 @@ public class BinarySearchTree {
                 case 5:
                     bst.postOrderTraversal(bst.root);
                 break;
+                case 6:
+                    System.out.println("\nNode Count: " + bst.getNodeCount() + "\n");
+                break;
                 case 0:
                     System.out.println("\n[ Exiting ]\n");
                     looping = false;
@@ -55,17 +65,23 @@ public class BinarySearchTree {
                 default:
                     System.out.println("\n[ Invalid Option ]\n");
             }
+
         }
 
         scan.close();
     }
 }
 
+// Node Class
 class Node{
+    // Left Child Node
     Node leftChild;
+    // Node Data
     int data;
+    // Right Child Node
     Node rightChild;
 
+    // Class Constructor
     public Node(int data){
         this.leftChild = null;
         this.data = data;
@@ -73,8 +89,11 @@ class Node{
     }
 }
 
+// Binary Search Tree Class
 class BST{
+    // Root Node
     Node root;
+    // Node Counter Variable
     int nodeCount;
 
     // Class Constructor
@@ -93,6 +112,8 @@ class BST{
         else{
             this.traverseAdd(this.root,newNode);
         }
+
+        this.nodeCount += 1;
     }
 
     // Method to add new node in BST via traversal
@@ -165,5 +186,10 @@ class BST{
             this.postOrderTraversal(currentNode.rightChild);
             System.out.print("[" + currentNode.data + "] ");
         }
+    }
+
+    // Method to get node count in BST
+    public int getNodeCount(){
+        return this.nodeCount;
     }
 }
